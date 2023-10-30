@@ -1,8 +1,8 @@
 pipeline {
   agent any
   environment {
-// Ajouter la variable dh_cred comme variables d'authentification
-  DOCKERHUB_CREDENTIALS = credentials('dh_cred')
+    //? Ajouter la variable dh_cred comme variables d'authentification
+    DOCKERHUB_CREDENTIALS = credentials('dh_cred')
   }
   triggers {
       pollSCM('*/5 * * * *') // Vérifier toutes les 5 minutes
@@ -17,9 +17,9 @@ pipeline {
     stage('Init'){
       steps{
 // Permet l'authentification
-    sh '''
-    echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
-    '''
+        sh '''
+        echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
+        '''
 
       }
     }
