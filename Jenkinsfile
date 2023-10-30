@@ -41,7 +41,7 @@ stage('Cleanup'){
 steps {
 
 sh '''
-docker rmi $DOCKERHUB_CREDENTIALS_USR/eapp-express-sqlite:$BUILD_ID
+docker rmi $DOCKERHUB_CREDENTIALS_USR/app-express-sqlite:$BUILD_ID
 docker logout
 '''
   }
