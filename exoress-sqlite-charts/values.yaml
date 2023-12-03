@@ -42,8 +42,8 @@ securityContext:
   # runAsUser: 1000
 
 service:
-  type: NodePort
-  port: 9001
+  type: nodePort
+  port: 9091
 
 ingress:
   enabled: false
