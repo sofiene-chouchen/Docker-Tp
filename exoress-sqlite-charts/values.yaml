@@ -43,7 +43,7 @@ securityContext:
 
 service:
   type: NodePort
-  port: 9000
+  port: 9001
 
 ingress:
   enabled: false
