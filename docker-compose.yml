@@ -7,4 +7,3 @@ services:
       - ./mydatabase.db:/usr/src/app/mydatabase.db
     ports:
       - '3000:3000'
-    

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "exoress-sqlite-charts.fullname" . }}-test-connection"
+  labels:
+    {{- include "exoress-sqlite-charts.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "exoress-sqlite-charts.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

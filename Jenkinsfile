@@ -27,7 +27,6 @@ pipeline {
   steps {
 
     sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/app-express-sqlite:$BUILD_ID .'
-
 }
 }
   stage('Deliver'){
